@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-(32-=@je%-p4ya5&@x-!e3ou4zng67)c2!cp8a6nmc1q-3qrkd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nightlife-thegrayfox.herokuapp.com/', '127.0.0.1:8000/']
+ALLOWED_HOSTS = ['nightlife-thegrayfox.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
