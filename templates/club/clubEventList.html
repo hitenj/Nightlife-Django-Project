@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Events{% endblock title %}
+
+{% block body %}
+
+<div class="container my-3">
+    <div class="row my-4 ">
+        <div class="col">
+        <h2 style="color: white;">Events in Club {{club.club_name}}</h2>
+        </div>
+
+    </div>
+
+      <div class="row">
+        <div class="row">
+
+          {% for i in events %}
+        <div class="col-md-4">
+            <a href="/club/event/{{i.c_event_id}}">
+          <div class="card mb-4 shadow-sm">
+            <img src="/media/{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ i.c_event_name }} <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg></h2>
+
+            </div>
+          </div></a>
+        </div>
+        {% endfor %}
+
+      </div>
+
+
+
+      </div>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,61 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% block head_title %}Settings{% endblock %}
+{% block extra_head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico'%}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/vendor/bootstrap/css/bootstrap.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/fonts/Linearicons-Free-v1.0.0/icon-font.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/vendor/animate/animate.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/vendor/css-hamburgers/hamburgers.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/vendor/animsition/css/animsition.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/vendor/select2/select2.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/vendor/daterangepicker/daterangepicker.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/css/util.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'allauth/css/main.css'%}">
+<!-- <link rel="stylesheet" href="{% static 'allauth/css/login.css' %}"> -->
+{% endblock %}
+
+{% block body %}
+
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('{% static 'allauth/images/bg-01.jpg' %}');">
+    <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+<h1>Settings</h1>
+
+<div class="row my-5">
+	<div class="col-md-6 p-3">
+		<a class="btn btn-outline-dark btn-lg" href="{% url 'account_change_password' %}" role="button">Change Password</a>
+	</div>
+	<div class="col-md-6 p-3">
+		<a class="btn btn-outline-dark btn-lg px-5" href="/offers" role="button">Offers</a>
+	</div>
+	<div class="col-md-6 p-3">
+		<a class="btn btn-outline-dark btn-lg px-4" href="/helpandsupport" role="button">Help & Support</a>
+	</div>
+	<div class="col-md-6 p-3">
+		<a class="btn btn-outline-dark btn-lg px-5" href="/faq" role="button">FAQ</a>
+	</div>
+
+
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}

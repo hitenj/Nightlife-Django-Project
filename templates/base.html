@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title> {% block title %}{% endblock title %} | NIGHTLIFE </title>
+
+      <style>
+    {% block css %}{% endblock %}
+
+    body {
+        background-color:#1E1F30;
+        }
+
+    .container a {
+     text-decoration:none;
+     }
+
+    ::marker {
+              visibility: hidden;
+              }
+
+        /* Modify the background color */
+
+        .navbar-custom {
+            background-image: linear-gradient(135deg, #3184F5, #0F1723);
+        }
+        /* Modify brand and text color */
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text,
+         .navbar-nav li a{
+            color: white;
+        }
+
+        .profile-nav .user-heading {
+    background: #fbc02d;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-nav .user-heading.round a  {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: 10px solid rgba(255,255,255,0.3);
+    display: inline-block;
+}
+
+.profile-nav .user-heading a img {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.profile-nav .user-heading h1 {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.profile-nav .user-heading p {
+    font-size: 12px;
+}
+
+    </style>
+
+  </head>
+  <body style="background-color:#1E1F30;">
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <a class="navbar-brand mx-5" href="/">NIGHTLIFE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color : white;">
+
+
+      <ul class="navbar-nav mr-auto" >
+      <li class="nav-item active" style="color : white;">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/club">Club</a>
+      </li>
+      <!--  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/services" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/services">Ice Cream</a>
+          <a class="dropdown-item" href="#">Softy</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Family Pack</a>
+        </div>
+      </li>       -->
+      <li class="nav-item">
+        <a class="nav-link" href="/event">Event</a>
+      </li>
+
+    </ul>
+
+    {% block city %} {% endblock city %}
+
+
+
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="get" action="/search">
+        {% csrf_token %}
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="search">
+        </form>
+
+        <div class="nav-item dropdown profile-nav text-end">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <!--   <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">  -->
+            <img src="/media/images/gallery-1-min.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+            <div class="dropdown-menu dropdown-menu-right px-5" aria-labelledby="navbarDropdown">
+
+
+                    <div class="user-heading round">
+                        {% if user.is_authenticated %}
+              <a href="#" class="py-0 my-0">
+                  <img class="py-0 my-0" width="100px" height="100px" style="border-radius: 50%;"  src="/media/images/gallery-1-min.jpg" alt="">
+              </a>
+              <h6 class="py-0 my-0 text-center">{{ user }}</h6>
+              <p class="pb-2 my-0">{{ user.email }}</p>
+
+                    <a class="dropdown-item" style="color:black;" href="/accounts/bookings">My Bookings</a>
+                    <a class="dropdown-item" style="color:black;" href="/accounts/settings">Settings</a>
+                    <a class="dropdown-item" style="color:black;" href="{% url 'account_logout' %}">Logout</a>
+
+
+
+            {% else %}
+                  <a class="dropdown-item" style="color:black;" href="{% url 'account_login' %}">Login</a>
+                  <a class="dropdown-item" style="color:black;" href="{% url 'account_signup' %}">Signup</a>
+
+            {% endif %}
+                         </div>
+
+        </div>
+
+        </div>
+  </div>
+</nav>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ {% endfor %}
+{% endif %}
+
+{% block body %} {% endblock body %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/15d5dae83d.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script> $(function(){
+    // Enables popover
+    $("[data-toggle=popover]").popover();
+});
+ {% block js %} {% endblock js %}  </script>
+
+  <!-- City Script -->
+<script type='text/javascript'>
+function submitForm(){
+  // Call submit() method on <form id='myform'>
+  document.getElementById('city').submit();
+}
+</script>
+
+
+  </body>
+</html>
