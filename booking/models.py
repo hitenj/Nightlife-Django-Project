@@ -95,7 +95,7 @@ class Club_Event_Booking(models.Model):
     myPythonList = jsonDec.decode(myModel.myList)"""
 
     def __str__(self):
-        return f'{self.user} has booked on {self.order_date} for  {self.event}'
+        return f'{self.user} has booked on {self.time_stamp} for  {self.event}'
 
 TABLE_CHOICES = (
 	(6, "Diamond Table"),
