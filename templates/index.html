@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block city %}
+
+<form method='post' action='/' id='city'>
+          {% csrf_token %}
+ <select name='city' onchange='submitForm();'>
+  <option >Select your city</option>
+  <option value='Agra' >Agra</option>
+  <option value='Goa'>Goa</option>
+  <option value='Paris'>Paris</option>
+ </select>
+</form>
+
+{% endblock city %}
+
+{% block body %}
+
+
+<div class="container-fluid px-0">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+                <img src="/static/1.jpg" class="d-block w-100"  alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Welcome to the NightLife Zone</h5>
+            <p>I know you eat icecreams but I know you have not eaten my icecream so please eat my icecrem</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+              <img src="/static/2.jpg" class="d-block w-100"  alt="...">
+
+        <div class="carousel-caption d-none d-md-block">
+            <h5>We serve love with our Ice Creams</h5>
+            <p>Harry's World Famous Best Ice creams.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="/static/3.jpg" class="d-block w-100 "  alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Inaugarated by Donald Trump</h5>
+            <p>This ice cream shop was inaugrated by Honurable President trump</p>
+        </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+</div>
+
+
+<div class="container my-3">
+    <div class="row my-4 ">
+        <div class="col">
+        <h2 style="color: white;">Recommended Events</h2>
+        </div>
+            <div class="col">
+                <p class="text-right my-2" style="color: white;"><a href="/event"> See all</a></p>
+            </div>
+    </div>
+
+      <div class="row">
+
+        {% for i in event|slice:":3" %}
+        <div class="col-md-4">
+            <a href="/event/{{i.event_id}}">
+          <div class="card mb-4 shadow-sm">
+            <img src="media/{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ i.event_name }} <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg></h2>
+            </div>
+          </div></a>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+
+
+<div class="container my-3">
+    <div class="row mh-100">
+
+        <div class="col my-4">
+        <h2 style="color: white;">Clubs</h2>
+        </div>
+            <div class="col">
+                <p class="text-right my-5" style="color: white;"><a href="/club"> See all</a></p>
+            </div>
+    </div>
+        <div class="col-12 mh-100">
+            <!-- tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="nav-item"><a href="#bollywood" aria-controls="bollywood" role="tab" data-toggle="tab" class="nav-link active">Bollywood</a>
+                </li>
+                <li role="presentation" class="nav-item"><a href="#hiphop" aria-controls="hiphop" role="tab" data-toggle="tab" class="nav-link">HipHop</a>
+                </li>
+                <li role="presentation" class="nav-item"><a href="#dance" aria-controls="dance" role="tab" data-toggle="tab" class="nav-link">Dance</a>
+                </li>
+                <li role="presentation" class="nav-item"><a href="#party" aria-controls="party" role="tab" data-toggle="tab" class="nav-link">Party</a>
+                </li>
+            </ul>
+            <div class="tab-content mh-100">
+                <div role="tabpanel" class="tab-pane active py-3" id="bollywood">
+                    <div class="row flex-row flex-nowrap">
+                        {% for i in bollywood %}
+                        <div class="col-lg-4">
+                            <a href="/club/{{i.club_id}}"><div class="card mb-4 shadow-sm">
+            <img src="media/{{ i.club_image }}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ i.club_name }}</h2>
+            </div>
+                            </div></a>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane py-3 mh-100" id="hiphop">
+                    <div class="row flex-row flex-nowrap">
+                        {% for i in hiphop %}
+                        <div class="col-lg-4">
+                            <a href="/club/{{i.club_id}}"><div class="card mb-4 shadow-sm">
+            <img src="media/{{ i.club_image }}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ i.club_name }}</h2>
+            </div>
+                            </div></a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane py-3 mh-100" id="dance">
+                   <div class="row flex-row flex-nowrap">
+                        {% for i in dance %}
+                        <div class="col-lg-4">
+                            <a href="/club/{{i.club_id}}"><div class="card mb-4 shadow-sm">
+            <img src="media/{{ i.club_image }}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ i.club_name }}</h2>
+            </div>
+                            </div></a>
+                        </div>
+                        {% endfor %}
+                   </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane py-3 mh-100" id="party">
+                   <div class="row flex-row flex-nowrap">
+                        {% for i in party %}
+                        <div class="col-lg-4">
+                            <a href="/club/{{i.club_id}}"><div class="card mb-4 shadow-sm">
+            <img src="media/{{ i.club_image }}" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ i.club_name }}</h2>
+            </div>
+                            </div></a>
+                        </div>
+                        {% endfor %}
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock body %}

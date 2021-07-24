@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<div class="container my-5" style="color:white; margin:0 25%;">
+    <div class="row">
+         <h1 class="">{{event.event_name}}</h1>
+         <h4 class=" mx-3 my-3">Guest List (Only 10 members allowed!!) </h4>
+    </div><br><br>
+
+
+    <form method="post" action="/event/{{event.event_id}}/checkout">
+    {% csrf_token %}
+
+    <h4 class="my-4" style="display:inline-block;">Male Stag </h4> <p style="display:inline-block;"> (per person : $ {{event.male_price}})</p><span class="mx-4" id="write1">0</span><input type="button" value="Add a Member" id="addInputs1" class="mx-5" style="display:inline-block;"/><br>
+    <div id="inputList1"></div><br>
+        <br>
+
+
+    <h4 class="my-4" style="display:inline-block;">Female Stag </h4> <p style="display:inline-block;"> (per person : $ {{event.female_price}})</p><span class="mx-4" id="write2">0</span><input type="button" value="Add a Member" id="addInputs2" class="mx-5" style="display:inline-block;"/><br>
+    <div id="inputList2"></div><br>
+        <br>
+
+
+    <h4 class="my-4" style="display:inline-block;" >Couple </h4> <p style="display:inline-block;"> (per couple : $ {{event.couple_price}})</p><span class="mx-4" id="write3">0</span><input type="button" value="Add a Couple" id="addInputs3" class="mx-5" style="display:inline-block;"/><br>
+    <div id="inputList3"></div><br>
+        <br>
+
+        <div class="row my-2">
+            <p style="font-size:170%;" class="mx-4 my-4" id="total">Total number of Members = 0</p>
+        <input class="btn btn-light btn-lg my-4" id="togglee"  type="submit" value="Pay Now">
+            </div>
+
+        </form>
+
+
+
+
+</div>
+
+
+{% endblock body %}
+
+{% block js %}
+
+
+
+var male = 0;
+$('#addInputs1').click(function () {
+    var zzz = '<input type="text" class="totall" name="male" value="" placeholder="Name of Member" required="True" /><br><br>';
+    $('#inputList1').append(zzz);
+    male++;
+
+
+    totall = $('.totall').length;
+    if (totall<=10) {
+    document.getElementById("total").innerHTML ="Total number of Members ="+ totall;
+}   else {
+    document.getElementById("total").innerHTML = "Sorry, only 10 members allowed!! ";
+    document.getElementById('togglee').innerHTML = '<input class="btn btn-light my-4" href="#" id="togglee"  type="button" value="Try Again">';
+    document.getElementById('togglee').value="Try Again";
+}
+
+    document.getElementById("write1").innerHTML = male;
+
+});
+
+var female = 0;
+$('#addInputs2').click(function () {
+    var zzz = '<input type="text" class="totall" name="female" value="" placeholder="Name of Member" required="True" /><br><br>';
+    $('#inputList2').append(zzz);
+    female++;
+
+    totall = $('.totall').length;
+    if (totall<=10) {
+    document.getElementById("total").innerHTML ="Total number of Members ="+ totall;
+}   else {
+    document.getElementById("total").innerHTML = "Sorry, only 10 members allowed!! ";
+    document.getElementById('togglee').innerHTML = '<input class="btn btn-light my-4" href="#" id="togglee"  type="button" value="Try Again">';
+    document.getElementById('togglee').value="Try Again";
+}
+
+    document.getElementById("write2").innerHTML = female;
+});
+
+var couple = 0;
+$('#addInputs3').click(function () {
+    var zzz = '<input type="text" class="totall mx-3" name="couple" value="" placeholder="Name of Member" required="True" /> & <input type="text" class="totall mx-3" name="couple" value="" placeholder="Name of Member" required="True" /><br><br>';
+    $('#inputList3').append(zzz);
+    couple=couple+2;
+
+    totall = $('.totall').length;
+    if (totall<=10) {
+    document.getElementById("total").innerHTML ="Total number of Members ="+ totall;
+}   else {
+    document.getElementById("total").innerHTML = "Sorry, only 10 members allowed!! ";
+    document.getElementById('togglee').innerHTML = '<input class="btn btn-light my-4" href="#" id="togglee"  type="button" value="Try Again">';
+    document.getElementById('togglee').value="Try Again";
+}
+
+    document.getElementById("write3").innerHTML = couple;
+});
+
+
+
+
+{% endblock js %}
+
+
+
+
