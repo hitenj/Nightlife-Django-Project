@@ -1,0 +1,1 @@
+web: gunicorn nightlife.wsgi --log-file -
