@@ -164,7 +164,7 @@ class Event_Booking(models.Model):
     user = models.ForeignKey(User, null=True, blank=True,
                              on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
-    booking_id = models.AutoField(primary_key=True, default=1)
+    booking_id = models.AutoField(primary_key=True)
     males = models.TextField(null=True)
     females = models.TextField(null=True)
     couples = models.TextField(null=True)
