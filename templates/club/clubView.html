@@ -9,7 +9,7 @@
     <div class="row">
 
         <div class="col-md-6">
-           <img src="/media/{{club.club_image}}" width="450px" height="450px">
+           <img src="/{{club.club_image}}" width="450px" height="450px">
             <a class="btn btn-light btn-lg my-4" style="margin-left:25%;" href="/club/{{club.club_id}}/events"  >Reservation</a>
 
             </div>
@@ -23,15 +23,15 @@
             <h4 class="my-3">Images</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <a href="/media/{{club.menus_image}}"><img src="/media/{{club.menus_image}}" width="140px" height="140px"></a>
+                    <a href="{{club.menus_image}}"><img src="\{{club.menus_image}}" width="140px" height="140px"></a>
                     <p>Menu</p>
                 </div>
                 <div class="col-md-4">
-                    <a href="/media/{{club.ambience_image1}}"><img src="/media/{{club.ambience_image1}}" width="140px" height="140px"></a>
+                    <a href="{{club.ambience_image1}}"><img src="{{club.ambience_image1}}" width="140px" height="140px"></a>
                             <p>Ambience</p>
                 </div>
                 <div class="col-md-4">
-                    <a href="/media/{{club.ambience_image2}}"><img src="/media/{{club.ambience_image2}}" width="140px" height="140px"></a>
+                    <a href="{{club.ambience_image2}}"><img src="{{club.ambience_image2}}" width="140px" height="140px"></a>
                 </div>
 
                         </div>
@@ -51,7 +51,7 @@
       <div class="col-md-4">
             <a href="/club/event/{{i.c_event_id}}">
           <div class="card mb-4 shadow-sm">
-            <img src="/media/{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
+            <img src="{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
             <div class="card-body">
               <h2 class="card-text">{{ i.c_event_name }} </h2>
             </div>
