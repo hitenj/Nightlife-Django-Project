@@ -677,7 +677,7 @@ def helpSupport(request):
 
     else:
         if request.user.is_authenticated:
-            return render(request, 'helpSupport.html')
+            return render(request, 'helpSupport.html', {'thank':thank})
         else:
             return redirect('/accounts/login')
 

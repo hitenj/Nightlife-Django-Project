@@ -155,12 +155,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 #manually added
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 
 
@@ -174,7 +179,7 @@ LOGIN_REDIRECT_URL = '/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #managing media
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
 MEDIA_URL = '/media/'
 
 
