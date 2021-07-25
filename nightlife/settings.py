@@ -60,8 +60,6 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -108,8 +106,12 @@ WSGI_APPLICATION = 'nightlife.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5q1lk7mh78a2s',
+        'HOST' : 'ec2-52-1-20-236.compute-1.amazonaws.com',
+        'PORT' : 5432,
+        'USER' : 'ukrqglmmtnbnoi',
+        'PASSWORD' : '21bd25c1f8d6e5c52bfd18203ae2fbd6a57ee0e56d0666c9b37dd36183ca68e3'
     }
 }
 

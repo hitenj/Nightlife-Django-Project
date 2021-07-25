@@ -70,10 +70,10 @@ PAYMENT_STATUS = (
 
 
 class Club_Event_Booking(models.Model):
+    booking_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, null=True, blank=True,
                              on_delete=models.CASCADE)
     event = models.ForeignKey(Club_Event, on_delete=models.CASCADE, null=True)
-    booking_id = models.AutoField(primary_key=True)
     males = models.TextField(null=True)
     females = models.TextField(null=True)
     couples = models.TextField(null=True)  # JSON-serialized (text) version of your list
@@ -104,10 +104,10 @@ TABLE_CHOICES = (
 )
 
 class Club_Event_Table_Booking(models.Model):
+    booking_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, null=True, blank=True,
                              on_delete=models.CASCADE)
     event = models.ForeignKey(Club_Event, on_delete=models.CASCADE, null=True)
-    booking_id = models.AutoField(primary_key=True)
     table = models.CharField(
         max_length=20,
         choices=TABLE_CHOICES,
