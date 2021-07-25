@@ -27,10 +27,10 @@ class Club(models.Model):
     club_city = models.CharField(max_length=30)
     club_zip_code = models.IntegerField(default=785412)
     club_about = models.TextField(default="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
-    club_image = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    menus_image = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    ambience_image1 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    ambience_image2 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    club_image = models.ImageField(upload_to='images', default="/static/1.jpg")
+    menus_image = models.ImageField(upload_to='images', default="/static/1.jpg")
+    ambience_image1 = models.ImageField(upload_to='images', default="/static/1.jpg")
+    ambience_image2 = models.ImageField(upload_to='images', default="/static/1.jpg")
     club_reg_date = models.DateField()
 
     def __str__(self):
@@ -49,12 +49,12 @@ class Club_Event(models.Model):
     couple_price = models.IntegerField(default=250)
     c_event_about = models.TextField(
         default="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
-    event_thumbnail = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    artist_image1 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    event_thumbnail = models.ImageField(upload_to='images', default="/static/1.jpg")
+    artist_image1 = models.ImageField(upload_to='images', default="/static/1.jpg")
     artist1 = models.CharField(max_length=122)
-    artist_image2 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    artist_image2 = models.ImageField(upload_to='images', default="/static/1.jpg")
     artist2 = models.CharField(max_length=122)
-    artist_image3 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    artist_image3 = models.ImageField(upload_to='images', default="/static/1.jpg")
     artist3 = models.CharField(max_length=122)
 
 
@@ -139,21 +139,21 @@ class Event(models.Model):
     event_time = models.TimeField()
     event_price = models.IntegerField(default=250)
     event_about = models.TextField(default="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")
-    event_thumbnail = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    artist_image1 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    event_thumbnail = models.ImageField(upload_to='images', default="/static/1.jpg")
+    artist_image1 = models.ImageField(upload_to='images', default="/static/1.jpg")
     artist1 = models.CharField(max_length=122)
-    artist_image2 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    artist_image2 = models.ImageField(upload_to='images', default="/static/1.jpg")
     artist2 = models.CharField(max_length=122)
-    artist_image3 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    artist_image3 = models.ImageField(upload_to='images', default="/static/1.jpg")
     artist3 = models.CharField(max_length=122)
-    event_image1 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    event_image2 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    event_image3 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
-    event_image4 = models.ImageField(upload_to='images', default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+    event_image1 = models.ImageField(upload_to='images', default="/static/1.jpg")
+    event_image2 = models.ImageField(upload_to='images', default="/static/1.jpg")
+    event_image3 = models.ImageField(upload_to='images', default="/static/1.jpg")
+    event_image4 = models.ImageField(upload_to='images', default="/static/1.jpg")
     event_image5 = models.ImageField(upload_to='images',
-                                     default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+                                     default="/static/1.jpg")
     event_image6 = models.ImageField(upload_to='images',
-                                     default="images\sam-mar-OQOKSsj8QME-unsplash_yb1Q7yu.jpg")
+                                     default="/static/1.jpg")
     event_TC = models.TextField()
 
     def __str__(self):
