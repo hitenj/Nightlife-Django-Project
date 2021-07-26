@@ -303,7 +303,7 @@ def bookingDetailsClubEvent(request, myid):
 
     url = "/club/event/booking/" + str(booking[0].booking_id)
     img = make(url)
-    save_url = "media/images/"+str(booking[0].user)+"_ce_booking"+str(booking[0].booking_id)+".png"
+    save_url = "static/images/"+str(booking[0].user)+"_ce_booking"+str(booking[0].booking_id)+".png"
     img.save(save_url)
 
 
@@ -316,7 +316,7 @@ def bookingDetailsClubEventTable(request, myid):
 
     url = "/club/event/bookingTable/" + str(booking[0].booking_id)
     img = make(url)
-    save_url = "media/images/"+str(booking[0].user)+"_cet_booking"+str(booking[0].booking_id)+".png"
+    save_url = "static/images/"+str(booking[0].user)+"_cet_booking"+str(booking[0].booking_id)+".png"
     img.save(save_url)
 
     amount = booking[0].amount // 1.18
@@ -576,7 +576,7 @@ def bookingDetailsEvent(request, myid):
 
     url = "/event/booking/" + str(booking[0].booking_id)
     img = make(url)
-    save_url = "media/images/" + str(booking[0].user) + "_e_booking" + str(booking[0].booking_id)+ ".png"
+    save_url = "static/images/" + str(booking[0].user) + "_e_booking" + str(booking[0].booking_id)+ ".png"
     img.save(save_url)
 
 
@@ -589,7 +589,7 @@ def bookingDetailsEventTable(request, myid):
 
     url = "/event/bookingTable/" + str(myid)
     img = make(url)
-    save_url = "media/images/"+str(booking[0].user)+"_et_booking"+str(myid)+".png"
+    save_url = "static/images/"+str(booking[0].user)+"_et_booking"+str(myid)+".png"
     img.save(save_url)
 
     amount = booking[0].amount // 1.18
