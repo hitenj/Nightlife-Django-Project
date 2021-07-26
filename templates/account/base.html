@@ -124,13 +124,13 @@
                     <div class="user-heading round">
                         {% if user.is_authenticated %}
               <a href="#" class="py-0 my-0">
-                  <img class="py-0 my-0" width="100px" height="100px" style="border-radius: 50%;"  src="/media/images/gallery-1-min.jpg" alt="">
+                  <img class="py-0 my-0" width="100px" height="100px" style="border-radius: 50%;"  src="/static/1.jpg" alt="">
               </a>
               <h6 class="py-0 my-0 text-center">{{ user }}</h6>
               <p class="pb-2 my-0">{{ user.email }}</p>
 
-                    <a class="dropdown-item" style="color:black;" href="bookings">My Bookings</a>
-                    <a class="dropdown-item" style="color:black;" href="settings">Settings</a>
+                    <a class="dropdown-item" style="color:black;" href="/bookings">My Bookings</a>
+                    <a class="dropdown-item" style="color:black;" href="/settings">Settings</a>
                     <a class="dropdown-item" style="color:black;" href="{% url 'account_logout' %}">Logout</a>
 
               {% else %}

@@ -21,7 +21,7 @@
         <div class="col-md-4">
             <a href="/club/{{i.club_id}}">
           <div class="card mb-4 shadow-sm">
-            <img src="media/{{ i.club_image }}" class="d-block w-100" alt="...">
+            <img src="{{ i.club_image }}" class="d-block w-100" alt="...">
             <div class="card-body">
               <h2 class="card-text">{{ i.club_name }} </h2>
             <p>{{i.club_address}}, {{i.club_city}}</p>
@@ -52,7 +52,7 @@
         <div class="col-md-4">
             <a href="/event/{{i.event_id}}">
           <div class="card mb-4 shadow-sm">
-            <img src="media/{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
+            <img src="{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
             <div class="card-body">
               <h2 class="card-text">{{ i.event_name }} <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
@@ -91,7 +91,7 @@
         <div class="col-md-4">
             <a href="/club/event/{{i.c_event_id}}">
           <div class="card mb-4 shadow-sm">
-            <img src="/media/{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
+            <img src="{{ i.event_thumbnail }}" class="d-block w-100" alt="...">
             <div class="card-body">
               <h2 class="card-text">{{ i.c_event_name }} <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
