@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 env = environ.Env(
-    DEBUG=(bool, False)
+    DEBUG=(bool, True)
 )
 
 
@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-(32-=@je%-p4ya5&@x-!e3ou4zng67)c2!cp8a6nmc1q-3qrkd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['nightlife-thegrayfox.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['nightlife-django-thegrayfox.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
@@ -60,7 +60,7 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+  #  'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -108,8 +108,12 @@ WSGI_APPLICATION = 'nightlife.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dc847lsc068j86',
+        'HOST' : 'ec2-18-235-4-83.compute-1.amazonaws.com',
+        'PORT' : 5432,
+        'USER' : 'aiimcmamssazep',
+        'PASSWORD' : '81d41b49f3b8d0ba40bf5f2647389be0dde48bb712b1ed7698c39676d41d9492'
     }
 }
 
@@ -151,12 +155,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 #manually added
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 
 
@@ -170,7 +179,7 @@ LOGIN_REDIRECT_URL = '/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #managing media
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
 MEDIA_URL = '/media/'
 
 

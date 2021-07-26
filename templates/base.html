@@ -120,7 +120,7 @@
         <div class="nav-item dropdown profile-nav text-end">
             <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        <!--   <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">  -->
-            <img src="/media/images/gallery-1-min.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+            <img src="/static/1.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
             <div class="dropdown-menu dropdown-menu-right px-5" aria-labelledby="navbarDropdown">
 
@@ -128,13 +128,13 @@
                     <div class="user-heading round">
                         {% if user.is_authenticated %}
               <a href="#" class="py-0 my-0">
-                  <img class="py-0 my-0" width="100px" height="100px" style="border-radius: 50%;"  src="/media/images/gallery-1-min.jpg" alt="">
+                  <img class="py-0 my-0" width="100px" height="100px" style="border-radius: 50%;"  src="/static/1.jpg" alt="">
               </a>
               <h6 class="py-0 my-0 text-center">{{ user }}</h6>
               <p class="pb-2 my-0">{{ user.email }}</p>
 
-                    <a class="dropdown-item" style="color:black;" href="/accounts/bookings">My Bookings</a>
-                    <a class="dropdown-item" style="color:black;" href="/accounts/settings">Settings</a>
+                    <a class="dropdown-item" style="color:black;" href="/bookings">My Bookings</a>
+                    <a class="dropdown-item" style="color:black;" href="/settings">Settings</a>
                     <a class="dropdown-item" style="color:black;" href="{% url 'account_logout' %}">Logout</a>
 
 
