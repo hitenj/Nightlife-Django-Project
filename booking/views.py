@@ -196,7 +196,7 @@ def paymentClubEvent(request, myid):
         'INDUSTRY_TYPE_ID': 'Retail',
         'WEBSITE': 'WEBSTAGING',
         'CHANNEL_ID': 'WEB',
-        'CALLBACK_URL': 'https://nightlife-django-thegrayfox.herokuapp.com//handlerequestClubEvent/',
+        'CALLBACK_URL': 'https://nightlife-django-thegrayfox.herokuapp.com/handlerequestClubEvent/',
 
     }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
