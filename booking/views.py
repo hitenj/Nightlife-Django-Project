@@ -196,7 +196,7 @@ def paymentClubEvent(request, myid):
         'INDUSTRY_TYPE_ID': 'Retail',
         'WEBSITE': 'WEBSTAGING',
         'CHANNEL_ID': 'WEB',
-        'CALLBACK_URL': 'http://127.0.0.1:8000/handlerequestClubEvent/',
+        'CALLBACK_URL': 'https://nightlife-django-thegrayfox.herokuapp.com//handlerequestClubEvent/',
 
     }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
@@ -218,7 +218,7 @@ def paymentClubEventTable(request, myid):
         'INDUSTRY_TYPE_ID': 'Retail',
         'WEBSITE': 'WEBSTAGING',
         'CHANNEL_ID': 'WEB',
-        'CALLBACK_URL': 'http://127.0.0.1:8000/handlerequestClubEventTable/',
+        'CALLBACK_URL': 'https://nightlife-django-thegrayfox.herokuapp.com/handlerequestClubEventTable/',
 
     }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
@@ -469,7 +469,7 @@ def paymentEvent(request, myid):
         'INDUSTRY_TYPE_ID': 'Retail',
         'WEBSITE': 'WEBSTAGING',
         'CHANNEL_ID': 'WEB',
-        'CALLBACK_URL': 'http://127.0.0.1:8000/handlerequestEvent/',
+        'CALLBACK_URL': 'https://nightlife-django-thegrayfox.herokuapp.com/handlerequestEvent/',
 
     }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
@@ -491,7 +491,7 @@ def paymentEventTable(request, myid):
         'INDUSTRY_TYPE_ID': 'Retail',
         'WEBSITE': 'WEBSTAGING',
         'CHANNEL_ID': 'WEB',
-        'CALLBACK_URL': 'http://127.0.0.1:8000/handlerequestEventTable/',
+        'CALLBACK_URL': 'https://nightlife-django-thegrayfox.herokuapp.com/handlerequestEventTable/',
 
     }
     param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
