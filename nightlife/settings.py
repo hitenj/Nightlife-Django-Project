@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-(32-=@je%-p4ya5&@x-!e3ou4zng67)c2!cp8a6nmc1q-3qrkd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['nightlife-thegrayfox.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['nightlife-django-thegrayfox.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
@@ -109,11 +109,11 @@ WSGI_APPLICATION = 'nightlife.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5q1lk7mh78a2s',
-        'HOST' : 'ec2-52-1-20-236.compute-1.amazonaws.com',
+        'NAME': 'dc847lsc068j86',
+        'HOST' : 'ec2-18-235-4-83.compute-1.amazonaws.com',
         'PORT' : 5432,
-        'USER' : 'ukrqglmmtnbnoi',
-        'PASSWORD' : '21bd25c1f8d6e5c52bfd18203ae2fbd6a57ee0e56d0666c9b37dd36183ca68e3'
+        'USER' : 'aiimcmamssazep',
+        'PASSWORD' : '81d41b49f3b8d0ba40bf5f2647389be0dde48bb712b1ed7698c39676d41d9492'
     }
 }
 
