@@ -14,17 +14,17 @@
     <form method="post" action="/event/{{event.event_id}}/checkout">
     {% csrf_token %}
 
-    <h4 class="my-4" style="display:inline-block;">Male Stag </h4> <p style="display:inline-block;"> (per person : $ {{event.male_price}})</p><span class="mx-4" id="write1">0</span><input type="button" value="Add a Member" id="addInputs1" class="mx-5" style="display:inline-block;"/><br>
+    <h4 class="my-4" style="display:inline-block;">Male Stag </h4> <p style="display:inline-block;"> (per person : $ {{event.event_price}})</p><span class="mx-4" id="write1">0</span><input type="button" value="Add a Member" id="addInputs1" class="mx-5" style="display:inline-block;"/><br>
     <div id="inputList1"></div><br>
         <br>
 
 
-    <h4 class="my-4" style="display:inline-block;">Female Stag </h4> <p style="display:inline-block;"> (per person : $ {{event.female_price}})</p><span class="mx-4" id="write2">0</span><input type="button" value="Add a Member" id="addInputs2" class="mx-5" style="display:inline-block;"/><br>
+    <h4 class="my-4" style="display:inline-block;">Female Stag </h4> <p style="display:inline-block;"> (per person : $ {{event.event_price}})</p><span class="mx-4" id="write2">0</span><input type="button" value="Add a Member" id="addInputs2" class="mx-5" style="display:inline-block;"/><br>
     <div id="inputList2"></div><br>
         <br>
 
 
-    <h4 class="my-4" style="display:inline-block;" >Couple </h4> <p style="display:inline-block;"> (per couple : $ {{event.couple_price}})</p><span class="mx-4" id="write3">0</span><input type="button" value="Add a Couple" id="addInputs3" class="mx-5" style="display:inline-block;"/><br>
+    <h4 class="my-4" style="display:inline-block;" >Couple </h4> <p style="display:inline-block;"> (per couple : $ {{event.event_price}})</p><span class="mx-4" id="write3">0</span><input type="button" value="Add a Couple" id="addInputs3" class="mx-5" style="display:inline-block;"/><br>
     <div id="inputList3"></div><br>
         <br>
 
