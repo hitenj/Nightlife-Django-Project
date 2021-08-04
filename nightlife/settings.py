@@ -105,17 +105,24 @@ WSGI_APPLICATION = 'nightlife.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dc847lsc068j86',
-        'HOST' : 'ec2-18-235-4-83.compute-1.amazonaws.com',
-        'PORT' : 5432,
-        'USER' : 'aiimcmamssazep',
-        'PASSWORD' : '81d41b49f3b8d0ba40bf5f2647389be0dde48bb712b1ed7698c39676d41d9492'
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'dc847lsc068j86',
+            'HOST' : 'ec2-18-235-4-83.compute-1.amazonaws.com',
+            'PORT' : 5432,
+            'USER' : 'aiimcmamssazep',
+            'PASSWORD' : '81d41b49f3b8d0ba40bf5f2647389be0dde48bb712b1ed7698c39676d41d9492'
+        }
+    }
 
 
 # Password validation
